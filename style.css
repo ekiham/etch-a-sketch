@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 640px;
+  width: 640px;
+  background-color: black;
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+}
+
+.square {
+  display: flex;
+  flex: 0 0 40px;
+  aspect-ratio: 1 / 1;
+  background-color: red;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+.button {
+  padding: 30px;
+  margin: 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  width: 640px;
+}
