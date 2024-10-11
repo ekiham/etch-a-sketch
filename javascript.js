@@ -23,10 +23,15 @@ function resetGrid() {
   const squareSize = containerSize / squaresPerRow - 1;
   for (let i = 0; i < gridSize; i++) {
     const div = document.createElement("div");
-    div.style.background = "red";
-    //div.textContent = "helloooooooooooo";
+    div.style.background = "white";
     div.classList.add("square");
     div.style.flexBasis = `${squareSize}px`;
+    div.addEventListener("mouseover", changer);
     container.appendChild(div);
   }
+}
+
+function changer() {
+  const square = event.target;
+  square.style.backgroundColor = "black";
 }
