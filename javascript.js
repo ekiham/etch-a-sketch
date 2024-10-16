@@ -11,7 +11,18 @@ button.addEventListener("click", resetGrid);
 function sizeSelector() {
   size = 0;
   size = prompt("Enter grid size:", 16);
-  return size * size;
+  if (size > 0 && size <= 100) {
+    return size * size;
+  } else if (size <= 0 || size > 100 || Number.isInteger(size) == false) {
+    while (size <= 0 || size > 100 || Number.isInteger(size) == false) {
+      alert("Grid size must be an integer between 1-100!!!");
+      size = prompt("Enter grid size:", 16);
+      if (size <= 0 || size > 100 || Number.isInteger(size) == false) {
+        break;
+      }
+    }
+    return size * size;
+  }
 }
 
 function resetGrid() {
@@ -20,7 +31,7 @@ function resetGrid() {
 
   const squaresPerRow = Math.sqrt(gridSize);
   const containerSize = 640;
-  const squareSize = containerSize / squaresPerRow - 1;
+  const squareSize = containerSize / squaresPerRow;
   for (let i = 0; i < gridSize; i++) {
     const div = document.createElement("div");
     div.style.background = "white";
