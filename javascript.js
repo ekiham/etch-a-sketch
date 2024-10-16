@@ -44,5 +44,8 @@ function resetGrid() {
 
 function changer() {
   const square = event.target;
+  let currentOpacity = parseFloat(square.style.opacity) || 0;
+  let newOpacity = currentOpacity + 0.1;
   square.style.backgroundColor = "black";
+  square.style.opacity = newOpacity;
 }
